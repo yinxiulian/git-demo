@@ -1,0 +1,16 @@
+const express = require('express')
+const router = express.Router()
+const tbData = require('../router_handler/mobile.js')
+const expressJoi = require('@escook/express-joi')
+const { update_userinfo_schema, delete_userinfo} = require('../schema/user.js')
+router.get('/mbdata',tbData.tableData)
+router.get('/cotdata',tbData.countdata)
+router.get('/orderdata',tbData.oddata)
+router.post('/add',tbData.editinsert)
+router.get('/account',tbData.accountApi)
+router.get('/name',tbData.nameApi)
+router.get('/delete',tbData.deleteUserApi)
+router.post('/updataUser',tbData.updataUserApi)
+router.get('/goods',tbData.goodsApi)
+
+module.exports = router 
